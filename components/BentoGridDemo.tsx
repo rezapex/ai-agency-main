@@ -48,7 +48,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 bg-white dark:bg-gray-800/40 backdrop-blur-sm border border-gray-200 dark:border-white/[0.2] justify-between flex flex-col space-y-4",
+        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 bg-white/70 dark:bg-black/40 backdrop-blur-sm border border-gray-200 dark:border-white/[0.1] justify-between flex flex-col space-y-4",
         className
       )}
     >
@@ -128,7 +128,7 @@ const BentoGridDemo: React.FC = () => {
   ];
 
   return (
-    <div className="p-8 rounded-3xl">
+    <div className="p-8 rounded-3xl bg-transparent">
       <BentoGrid className="max-w-5xl mx-auto gap-4">
         {items.map((item, i) => (
           <BentoGridItem
@@ -136,7 +136,7 @@ const BentoGridDemo: React.FC = () => {
             title={item.title}
             description={item.description}
             header={item.header}
-            className={cn("bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors", item.className)}
+            className={cn("bg-white/70 dark:bg-black/40 hover:bg-white/80 dark:hover:bg-black/50 transition-colors backdrop-blur-sm", item.className)}
             icon={item.icon}
           />
         ))}
@@ -183,24 +183,24 @@ const SkeletonOne: React.FC = () => {
     >
       <motion.div
         variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white dark:bg-black"
+        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white/80 dark:bg-gray-950/50 backdrop-blur-sm"
       >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-300 to-green-500 flex-shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
+        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex-shrink-0" />
+        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-gray-800" />
       </motion.div>
       <motion.div
         variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
+        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-3/4 ml-auto bg-white/80 dark:bg-gray-950/50 backdrop-blur-sm"
       >
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-purple-200 to-green-400 flex-shrink-0" />
+        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-gray-800" />
+        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-lime-500 to-green-500 flex-shrink-0" />
       </motion.div>
       <motion.div
         variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white dark:bg-black"
+        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white/80 dark:bg-gray-950/50 backdrop-blur-sm"
       >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-green-300 to-green-500 flex-shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
+        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 flex-shrink-0" />
+        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-gray-800" />
       </motion.div>
     </motion.div>
   );
@@ -306,7 +306,7 @@ const SkeletonFour: React.FC = () => {
     >
       <motion.div
         variants={first}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur-sm p-4 dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
           src="https://images.unsplash.com/photo-1717579502736-7e28e27eef64?q=80&w=3987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -322,7 +322,7 @@ const SkeletonFour: React.FC = () => {
           Step 1
         </p>
       </motion.div>
-      <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
+      <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur-sm p-4 dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
         <Image
           src="https://images.unsplash.com/photo-1693252258249-5ef8b8b1a0ed?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="AI processing"
@@ -339,7 +339,7 @@ const SkeletonFour: React.FC = () => {
       </motion.div>
       <motion.div
         variants={second}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
+        className="h-full w-1/3 rounded-2xl bg-white/70 dark:bg-black/40 backdrop-blur-sm p-4 dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <Image
           src="https://images.unsplash.com/photo-1703750960156-b8e765f5543c?q=80&w=3880&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -419,3 +419,4 @@ const SkeletonFive: React.FC = () => {
 };
 
 export default BentoGridDemo;
+

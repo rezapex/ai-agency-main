@@ -94,13 +94,15 @@ export const Hero = () => {
         </motion.div>
         
         {/* AI Services Section (Bento Grid) */}
-        <div className="mt-20 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-100/50 to-gray-200/20 dark:from-black/50 dark:to-black/20 rounded-3xl"></div>
-          <div className="relative bg-white/70 dark:bg-black/30 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-white/10">
-            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Our AI Services</h2>
-            <BentoGridDemo />
-          </div>
-        </div>
+<div className="mt-20 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="absolute inset-0 bg-gradient-to-b from-gray-100/50 to-gray-200/20 dark:from-gray-900/30 dark:to-black/20 rounded-3xl"></div>
+  <div className="relative bg-transparent backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-gray-200/50 dark:border-white/10">
+    <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Our AI Services</h2>
+    <BentoGridDemo />
+  </div>
+</div>
+
+
 
         {/* Separator */}
         <div className="mt-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> </div>

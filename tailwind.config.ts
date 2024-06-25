@@ -20,7 +20,32 @@ const config: Config = {
       colors: {
         primary: "#020022",
         muted: "var(--neutral-600)",
+        gray: {
+          50: "#f9fafb",
+          100: "#f3f4f6",
+          200: "#e5e7eb",
+          300: "#d1d5db",
+          400: "#9ca3af",
+          500: "#6b7280",
+          600: "#4b5563",
+          700: "#374151",
+          800: "#25292e",
+          900: "#1c1f24",
+        },
         "muted-dark": "var(--neutral-300)",
+        'green': {
+          '50': '#edfcf5',
+          '100': '#d4f7e6',
+          '200': '#aceed2',
+          '300': '#76dfb7',
+          '400': '#3fc899',
+          '500': '#199e75',
+          '600': '#0f8c68',
+          '700': '#0c7056',
+          '800': '#0c5945',
+          '900': '#0b493a',
+          '950': '#052922',
+        },
       },
       animation: {
         scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
@@ -73,3 +98,4 @@ function addVariablesForColors({ addBase, theme }: any) {
 }
 
 export default config;
+

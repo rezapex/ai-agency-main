@@ -6,9 +6,9 @@ import { HorizontalGradient } from "@/components/horizontal-gradient";
 import { ContactForm } from "@/components/contact";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Everything AI",
+  title: "Contact Us - Automate SMB",
   description:
-    "Everything AI is a platform that provides a wide range of AI tools and services to help you stay on top of your business. Generate images, text and everything else that you need to get your business off the ground.",
+    "At AutomateSMB, we're revolutionizing how small and medium-sized businesses harness the power of artificial intelligence. Our approach is simple: we take your data, your challenges, and your goals, then create AI models tailored specifically to your needs. No off-the-shelf solutions here - just powerful, private AI that speaks your business language.",
   openGraph: {
     images: ["https://ai-saas-template-aceternity.vercel.app/banner.png"],
   },
@@ -28,15 +28,15 @@ export default function PricingPage() {
                 "font-semibold text-xl text-center dark:text-muted-dark text-muted"
               )}
             >
-              Every AI is used by thousands of users
+              Your Data, Your AI, Your Success. Unlock AI Without Breaking the Bank.
             </p>
             <p
               className={cn(
                 "font-normal text-base text-center text-neutral-500 dark:text-neutral-200 mt-8"
               )}
             >
-              With lots of AI applications around, Everything AI stands out with
-              its state of the art Shitposting capabilities.
+              We specialize in crafting bespoke AI solutions that are as unique as
+              your business, without the enterprise-level price tag.
             </p>
           </div>
           <HorizontalGradient className="top-20" />

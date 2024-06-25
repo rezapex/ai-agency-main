@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import React from "react";
-import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import {
   IconChartBar,
   IconMessageBolt,
@@ -14,13 +13,66 @@ import {
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const BentoGridThirdDemo: React.FC = () => {
+export const BentoGrid = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const BentoGridItem = ({
+  className,
+  title,
+  description,
+  header,
+  icon,
+}: {
+  className?: string;
+  title?: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  header?: React.ReactNode;
+  icon?: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 bg-white dark:bg-gray-800/40 backdrop-blur-sm border border-gray-200 dark:border-white/[0.2] justify-between flex flex-col space-y-4",
+        className
+      )}
+    >
+      {header}
+      <div className="group-hover/bento:translate-x-2 transition duration-200">
+        {icon}
+        <div className="font-sans font-bold text-gray-800 dark:text-gray-100 mb-2 mt-2">
+          {title}
+        </div>
+        <div className="font-sans font-normal text-gray-600 dark:text-gray-300 text-sm">
+          {description}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const BentoGridDemo: React.FC = () => {
   const items = [
     {
       title: "AI-Powered Business Analytics",
       description: (
-        <span className="text-gray-300">
-          Harness the power of AI to gain <span className="text-blue-300 font-semibold">actionable insights</span> from your business data.
+        <span className="text-gray-600 dark:text-gray-300">
+          Harness the power of AI to gain <span className="text-blue-600 dark:text-blue-300 font-semibold">actionable insights</span> from your business data.
         </span>
       ),
       header: <SkeletonOne />,
@@ -30,8 +82,8 @@ const BentoGridThirdDemo: React.FC = () => {
     {
       title: "Automated Customer Service",
       description: (
-        <span className="text-gray-300">
-          Implement AI chatbots to handle <span className="text-green-300 font-semibold">customer inquiries 24/7</span>.
+        <span className="text-gray-600 dark:text-gray-300">
+          Implement AI chatbots to handle <span className="text-green-600 dark:text-green-300 font-semibold">customer inquiries 24/7</span>.
         </span>
       ),
       header: <SkeletonTwo />,
@@ -41,8 +93,8 @@ const BentoGridThirdDemo: React.FC = () => {
     {
       title: "Predictive Marketing",
       description: (
-        <span className="text-gray-300">
-          Use AI to <span className="text-purple-300 font-semibold">predict customer behavior</span> and optimize your marketing campaigns.
+        <span className="text-gray-600 dark:text-gray-300">
+          Use AI to <span className="text-purple-600 dark:text-purple-300 font-semibold">predict customer behavior</span> and optimize your marketing campaigns.
         </span>
       ),
       header: <SkeletonThree />,
@@ -52,9 +104,9 @@ const BentoGridThirdDemo: React.FC = () => {
     {
       title: "AI-Enhanced Decision Making",
       description: (
-        <span className="text-gray-300">
+        <span className="text-gray-600 dark:text-gray-300">
           <span className="text-sm">
-            Leverage AI algorithms to support <span className="bg-gradient-to-r from-blue-300 to-green-400 bg-clip-text text-transparent">strategic business decisions</span>.
+            Leverage AI algorithms to support <span className="bg-gradient-to-r from-blue-600 dark:from-blue-300 to-green-600 dark:to-green-300 bg-clip-text text-transparent">strategic business decisions</span>.
           </span>
         </span>
       ),
@@ -65,8 +117,8 @@ const BentoGridThirdDemo: React.FC = () => {
     {
       title: "Intelligent Process Automation",
       description: (
-        <span className="text-sm">
-          Streamline your business processes with <span className="bg-gradient-to-r from-green-300 to-purple-400 bg-clip-text text-transparent">AI-driven automation solutions</span>.
+        <span className="text-sm text-gray-600 dark:text-gray-300">
+          Streamline your business processes with <span className="bg-gradient-to-r from-green-600 dark:from-green-300 to-purple-600 dark:to-purple-300 bg-clip-text text-transparent">AI-driven automation solutions</span>.
         </span>
       ),
       header: <SkeletonFive />,
@@ -84,7 +136,7 @@ const BentoGridThirdDemo: React.FC = () => {
             title={item.title}
             description={item.description}
             header={item.header}
-            className={cn("bg-gray-800 hover:bg-gray-750 transition-colors", item.className)}
+            className={cn("bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750 transition-colors", item.className)}
             icon={item.icon}
           />
         ))}
@@ -360,10 +412,10 @@ const SkeletonFive: React.FC = () => {
         className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
       >
         <p className="text-xs text-neutral-500">Boost productivity with AI.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-green-300 to-purple-500 flex-shrink-0" />
+        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-green-600 dark:from-green-300 to-purple-600 dark:to-purple-300 flex-shrink-0" />
       </motion.div>
     </motion.div>
   );
 };
 
-export default BentoGridThirdDemo;
+export default BentoGridDemo;

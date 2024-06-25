@@ -10,10 +10,9 @@ import { useRouter } from "next/navigation";
 import { Link } from "next-view-transitions";
 import { FaIndustry, FaLaptopCode, FaRocket } from 'react-icons/fa';
 import dynamic from 'next/dynamic';
-import { BentoGridItem } from '@/components/ui/bento-grid';
 import Head from 'next/head';
 
-const AIServices = dynamic(() => import('@/components/AIServices'), { ssr: false });
+const BentoGridDemo = dynamic(() => import('@/components/BentoGridDemo'), { ssr: false });
 
 const useNavigateToBlog = () => {
   const router = useRouter();
@@ -96,10 +95,10 @@ export const Hero = () => {
         
         {/* AI Services Section (Bento Grid) */}
         <div className="mt-20 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/20 rounded-3xl"></div>
-          <div className="relative bg-black/30 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/10">
-            <h2 className="text-2xl font-bold mb-6 text-center">Our AI Services</h2>
-            <AIServices />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-100/50 to-gray-200/20 dark:from-black/50 dark:to-black/20 rounded-3xl"></div>
+          <div className="relative bg-white/70 dark:bg-black/30 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-white/10">
+            <h2 className="text-2xl font-bold mb-6 text-center text-gray-800 dark:text-white">Our AI Services</h2>
+            <BentoGridDemo />
           </div>
         </div>
 
